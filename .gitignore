@@ -1,2 +1,3 @@
-StartDroid_core/bin/
-StartDroid_core/gen/
+## Exclude file used by compilators, interpreters, etc.
+*/bin/*
+*/gen/*

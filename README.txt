@@ -9,4 +9,4 @@
 	Project from https://github.com/loicknuchel/StartDroid
 
 
-
+Ce projet reprend les bases du l'ancien projet StartDroid (https://github.com/loicknuchel/StartDroid_old) mais avec un meilleure architecture et séparation des fonctionnalités.

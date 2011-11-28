@@ -35,6 +35,9 @@
 			android:name="com.lknuchel.startdroid.core.Persistance_Sqlite_AdminActivity"></activity>
 		<activity
 			android:name="com.lknuchel.startdroid.core.Persistance_Sqlite_CRUDActivity"></activity>
+
+		<activity android:name="com.lknuchel.startdroid.core.Ui_List_ListViewCustom"></activity>
+
 		<activity android:name="com.lknuchel.startdroid.core.Data_ContentProvider_Activity">
 			<intent-filter>
 				<data

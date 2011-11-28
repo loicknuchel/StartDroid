@@ -10,10 +10,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+/*
+ * http://www.iconarchive.com/show/softdimension-icons-by-benjigarner/MS-Word-2-icon.html
+ * http://www.iconarchive.com/show/softdimension-icons-by-benjigarner/Excel-icon.html
+ * http://www.iconarchive.com/show/softdimension-icons-by-benjigarner/PowerPoint-icon.html
+ * http://www.iconarchive.com/show/softdimension-icons-by-benjigarner/Outlook-icon.html
+ */
 public class MainActivity extends Activity {
 	private Context c;
 	private Button sqliteButton;
 	private Button contentproviderButton;
+	private Button customListViewButton;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,7 @@ public class MainActivity extends Activity {
 	protected void setUp() {
 		sqliteButton = (Button) findViewById(R.activity_main.sqlite);
 		contentproviderButton = (Button) findViewById(R.activity_main.contentprovider);
+		customListViewButton = (Button) findViewById(R.activity_main.customlistview);
 	}
 
 	private void onCLickValidate() {
@@ -40,6 +48,13 @@ public class MainActivity extends Activity {
 		contentproviderButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Intent i = new Intent(c, Data_ContentProvider_Activity.class);
+				startActivity(i);
+			}
+		});
+
+		customListViewButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Intent i = new Intent(c, Ui_List_ListViewCustom.class);
 				startActivity(i);
 			}
 		});

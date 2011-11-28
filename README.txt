@@ -10,3 +10,9 @@
 
 
 Ce projet reprend les bases du l'ancien projet StartDroid (https://github.com/loicknuchel/StartDroid_old) mais avec un meilleure architecture et séparation des fonctionnalités.
+
+Fonctionnalités intégrées :
+	- gestion Sqlite
+	- content providers
+	- internationalisation
+	- simple custom list

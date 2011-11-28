@@ -1,16 +1,10 @@
 
-- content providers
-	* http://www.tutos-android.com/contentprovider-android
-
 - broadcast receiver
 	* http://www.tutos-android.com/broadcast-receiver-android
 
 - notifications
 	* http://www.tutomobile.fr/utiliser-les-notifications-pour-avertir-lutilisateur-tutoriel-android-n%C2%B017/08/09/2010/
 	* http://www.tutos-android.com/notifications-android
-
-- internationalisation
-	* http://www.tutomobile.fr/internationaliser-vos-applications-android-tutoriel-android-n%C2%B014/08/08/2010/
 
 - ListView
 	* http://www.tutomobile.fr/personnaliser-une-listview-tutoriel-android-n%C2%B07/04/07/2010/

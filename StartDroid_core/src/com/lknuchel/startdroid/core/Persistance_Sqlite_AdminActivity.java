@@ -69,11 +69,11 @@ public class Persistance_Sqlite_AdminActivity extends Activity {
 
 		PeopleHelper db2 = new PeopleHelper(c);
 		db2.open();
-		db2.insert(new People("loic", 1));
-		db2.insert(new People("claude", 0));
-		db2.insert(new People("michel", 5));
-		db2.insert(new People("john", 2));
-		db2.insert(new People("lola", 1));
+		db2.insert(new People("loic", "oracle"));
+		db2.insert(new People("claude", "oracle"));
+		db2.insert(new People("michel", "apple"));
+		db2.insert(new People("john", "microsoft"));
+		db2.insert(new People("louise", "Decathlon"));
 		db2.close();
 	}
 }

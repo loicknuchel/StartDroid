@@ -25,14 +25,14 @@ public class PeopleHelper extends SqliteAdapterImpl<People> {
 	}
 
 	public List<People> getPeoplesLinkedWithCompany(final String companyName) {
-		// SELECT * FROM People p LEFT OUTER JOIN Company c ON c.id =
-		// p.companyId
+		// SELECT * FROM People p LEFT OUTER JOIN Company c ON c.name =
+		// p.companyName
 		// WHERE c.name = name
 		String p = SqliteConstants.PEOPLE_TABLE;
 		String c = SqliteConstants.COMPANY_TABLE;
 		String sql = "SELECT * FROM " + p + " LEFT OUTER JOIN " + c + " ON "
-				+ c + "." + SqliteConstants.COMPANY_COL_ID + " = " + p + "."
-				+ SqliteConstants.PEOPLE_COL_COMPANYID + " WHERE " + c + "."
+				+ c + "." + SqliteConstants.COMPANY_COL_NAME + " = " + p + "."
+				+ SqliteConstants.PEOPLE_COL_COMPANYNAME + " WHERE " + c + "."
 				+ SqliteConstants.COMPANY_COL_NAME + " = '" + companyName + "'";
 		Cursor res = mDb.rawQuery(sql, null);
 		return cursorToObjectList(res);
@@ -42,7 +42,7 @@ public class PeopleHelper extends SqliteAdapterImpl<People> {
 	protected ContentValues createValues(People val) {
 		ContentValues values = new ContentValues();
 		values.put(SqliteConstants.PEOPLE_COL_NAME, val.getName());
-		values.put(SqliteConstants.PEOPLE_COL_COMPANYID, val.getCompanyId());
+		values.put(SqliteConstants.PEOPLE_COL_COMPANYNAME, val.getCompanyName());
 		return values;
 	}
 
@@ -51,7 +51,7 @@ public class PeopleHelper extends SqliteAdapterImpl<People> {
 		People ret = new People();
 		ret.setId(c.getInt(SqliteConstants.PEOPLE_NUM_COL_ID));
 		ret.setName(c.getString(SqliteConstants.PEOPLE_NUM_COL_NAME));
-		ret.setCompanyId(c.getInt(SqliteConstants.PEOPLE_NUM_COL_COMPANYID));
+		ret.setCompanyName(c.getString(SqliteConstants.PEOPLE_NUM_COL_COMPANYNAME));
 		return ret;
 	}
 
@@ -59,6 +59,6 @@ public class PeopleHelper extends SqliteAdapterImpl<People> {
 	protected String[] allColumns() {
 		return new String[] { SqliteConstants.PEOPLE_COL_ID,
 				SqliteConstants.PEOPLE_COL_NAME,
-				SqliteConstants.PEOPLE_COL_COMPANYID };
+				SqliteConstants.PEOPLE_COL_COMPANYNAME };
 	}
 }

@@ -12,7 +12,8 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 	private Context c;
-	private Button testButton;
+	private Button sqliteButton;
+	private Button contentproviderButton;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -24,13 +25,21 @@ public class MainActivity extends Activity {
 	}
 
 	protected void setUp() {
-		testButton = (Button) findViewById(R.activity_main.test);
+		sqliteButton = (Button) findViewById(R.activity_main.sqlite);
+		contentproviderButton = (Button) findViewById(R.activity_main.contentprovider);
 	}
 
 	private void onCLickValidate() {
-		testButton.setOnClickListener(new OnClickListener() {
+		sqliteButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Intent i = new Intent(c, Persistance_Sqlite_HostActivity.class);
+				startActivity(i);
+			}
+		});
+
+		contentproviderButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Intent i = new Intent(c, Data_ContentProvider_Activity.class);
 				startActivity(i);
 			}
 		});

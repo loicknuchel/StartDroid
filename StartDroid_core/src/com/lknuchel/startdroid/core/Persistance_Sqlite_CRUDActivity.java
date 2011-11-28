@@ -28,7 +28,7 @@ import com.lknuchel.startdroid.model.Company;
 public class Persistance_Sqlite_CRUDActivity extends Activity {
 	private Context c;
 	private EditText nameEdit;
-	private EditText companyIdEdit;
+	private EditText companyNameEdit;
 	private Button createBtn;
 	private ListView resultListView;
 	private String intentData = "people";
@@ -57,32 +57,27 @@ public class Persistance_Sqlite_CRUDActivity extends Activity {
 
 	protected void setUp() {
 		nameEdit = (EditText) findViewById(R.activity_persistance_sqlite_crud.nameEdit);
-		companyIdEdit = (EditText) findViewById(R.activity_persistance_sqlite_crud.companyIdEdit);
+		companyNameEdit = (EditText) findViewById(R.activity_persistance_sqlite_crud.companyNameEdit);
 		createBtn = (Button) findViewById(R.activity_persistance_sqlite_crud.createBtn);
 		resultListView = (ListView) findViewById(R.activity_persistance_sqlite_crud.keyValueList);
 		if (intentData.equals("people")) {
 			nameEdit.setHint(getResources().getString(R.string.DSCA_peoplename));
-			companyIdEdit.setHint(getResources().getString(
-					R.string.DSCA_companyid));
+			companyNameEdit.setHint(getResources().getString(
+					R.string.DSCA_companyname));
 		} else {
 			nameEdit.setHint(getResources()
 					.getString(R.string.DSCA_companyname));
-			companyIdEdit.setVisibility(View.GONE);
+			companyNameEdit.setVisibility(View.GONE);
 		}
 	}
 
 	private void onCLickValidate() {
 		createBtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				if (intentData.equals("people")) {
-					saveInSqlite(nameEdit.getText().toString(), Integer
-							.parseInt(companyIdEdit.getText().toString()),
-							intentData);
-				} else {
-					saveInSqlite(nameEdit.getText().toString(), 0, intentData);
-				}
+				saveInSqlite(nameEdit.getText().toString(), companyNameEdit
+						.getText().toString(), intentData);
 				nameEdit.setText("");
-				companyIdEdit.setText("");
+				companyNameEdit.setText("");
 				displayList(intentData);
 
 				if (intentData.equals("people")) {
@@ -157,9 +152,9 @@ public class Persistance_Sqlite_CRUDActivity extends Activity {
 				});
 	}
 
-	private void saveInSqlite(String name, int companyId, String type) {
+	private void saveInSqlite(String name, String companyName, String type) {
 		if (type.equals("people")) {
-			People val = new People(name, companyId);
+			People val = new People(name, companyName);
 			PeopleHelper helper = new PeopleHelper(
 					Persistance_Sqlite_CRUDActivity.this);
 			helper.open();
@@ -228,7 +223,7 @@ public class Persistance_Sqlite_CRUDActivity extends Activity {
 			if (tmpList2 != null) {
 				for (People b : tmpList2) {
 					keyValueListString.add(b.getId() + ". " + b.getName()
-							+ " - company " + b.getCompanyId());
+							+ " - " + b.getCompanyName());
 					peopleList.add(b);
 				}
 			}

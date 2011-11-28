@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.knuchel.startdroid.core" android:versionCode="1"
 	android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="8" />
 
 	<!-- Permissions : -->
 	<!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" 
@@ -22,6 +23,7 @@
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
+				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
 		</activity>
 
@@ -33,5 +35,14 @@
 			android:name="com.lknuchel.startdroid.core.Persistance_Sqlite_AdminActivity"></activity>
 		<activity
 			android:name="com.lknuchel.startdroid.core.Persistance_Sqlite_CRUDActivity"></activity>
+		<activity android:name="com.lknuchel.startdroid.core.Data_ContentProvider_Activity">
+			<intent-filter>
+				<data
+					android:mimeType="vnd.android.cursor.item/vnd.lknuchel.startdroid.data.contentprovider.cours" />
+			</intent-filter>
+		</activity>
+		<provider
+			android:name="com.lknuchel.startdroid.data.contentprovider.AndroidProvider"
+			android:authorities="com.lknuchel.startdroid.data.contentprovider.androidprovider" />
 	</application>
 </manifest>

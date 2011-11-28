@@ -5,7 +5,9 @@
 
 	<TextView android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:text="@string/hello" />
-	<Button android:id="@+activity_main/test" android:text="test"
+	<Button android:id="@+activity_main/sqlite" android:text="Sqlite"
+		android:layout_width="match_parent" android:layout_height="wrap_content" />
+	<Button android:id="@+activity_main/contentprovider" android:text="contentprovider"
 		android:layout_width="match_parent" android:layout_height="wrap_content" />
 
 </LinearLayout>

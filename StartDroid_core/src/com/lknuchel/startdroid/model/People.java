@@ -7,14 +7,14 @@ import com.lknuchel.startdroid.persistance.sqlite.SqliteAdapter;
 public class People implements SqliteAdapter {
 	private int id;
 	private String name;
-	private int companyId;
+	private String companyName;
 
 	public People() {
 	}
 
-	public People(String name, int i) {
+	public People(String name, String companyName) {
 		this.setName(name);
-		this.setCompanyId(i);
+		this.setCompanyName(companyName);
 	}
 
 	public void setId(int id) {
@@ -33,11 +33,11 @@ public class People implements SqliteAdapter {
 		return name;
 	}
 
-	public void setCompanyId(int i) {
-		this.companyId = i;
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
-	public int getCompanyId() {
-		return companyId;
+	public String getCompanyName() {
+		return companyName;
 	}
 }

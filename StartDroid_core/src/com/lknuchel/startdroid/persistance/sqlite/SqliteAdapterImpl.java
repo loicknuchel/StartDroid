@@ -26,7 +26,7 @@ public abstract class SqliteAdapterImpl<T> {
 				+ SqliteConstants.PEOPLE_COL_ID
 				+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
 				+ SqliteConstants.PEOPLE_COL_NAME + " TEXT NOT NULL, "
-				+ SqliteConstants.PEOPLE_COL_COMPANYID + " TEXT NOT NULL);";
+				+ SqliteConstants.PEOPLE_COL_COMPANYNAME + " TEXT NOT NULL);";
 
 		protected static String CREATE_COMPANY_TABLE = "CREATE TABLE "
 				+ SqliteConstants.COMPANY_TABLE + "("

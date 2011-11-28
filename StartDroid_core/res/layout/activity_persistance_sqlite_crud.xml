@@ -6,7 +6,7 @@
 
 	<EditText android:id="@+activity_persistance_sqlite_crud/nameEdit"
 		android:layout_width="match_parent" android:layout_height="wrap_content" />
-	<EditText android:id="@+activity_persistance_sqlite_crud/companyIdEdit"
+	<EditText android:id="@+activity_persistance_sqlite_crud/companyNameEdit"
 		android:layout_width="match_parent" android:layout_height="wrap_content" />
 
 	<Button android:id="@+activity_persistance_sqlite_crud/createBtn"
